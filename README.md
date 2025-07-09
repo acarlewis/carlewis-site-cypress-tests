@@ -30,7 +30,7 @@ This project contains automated tests for my personal portfolio site. It uses:
 
 - **Cypress**: A powerful, modern E2E test framework.
 - **Cucumber**: To define BDD-style Gherkin feature files.
-- **Node.js**: For managing dependencies and test execution.
+- **TypeScript**: For writing clean and type-safe test logic.
 
 ---
 
@@ -38,7 +38,7 @@ This project contains automated tests for my personal portfolio site. It uses:
 
 - 🧪 [Cypress](https://www.cypress.io/)
 - 🍀 [@badeball/cypress-cucumber-preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor)
-- 🔧 Node.js
+- 🟦 TypeScript
 - 🔤 Gherkin syntax for BDD
 
 ---
@@ -48,8 +48,8 @@ This project contains automated tests for my personal portfolio site. It uses:
 1. **Clone the repo**
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/acarlewis/carlewis-site-cypress-tests.git
+cd carlewis-site-cypress-tests
 ```
 
 2. **Install dependencies**
@@ -134,7 +134,7 @@ This project is open-sourced under the [MIT License](LICENSE).
 
 ## 🌐 Live Site
 
-🔗 [https://your-website-link.com](https://your-website-link.com)
+🔗 [https://cyclone.42web.io/](https://cyclone.42web.io/)
 
 ---
 
