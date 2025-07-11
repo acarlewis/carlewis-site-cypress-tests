@@ -33,4 +33,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
-# npx cypress run --record --key f497b5b1-4018-4d86-8410-7460d67d6db3
+# npx cypress run --record --key a2208ba9-f766-4f78-871d-fe73dc1f4895
