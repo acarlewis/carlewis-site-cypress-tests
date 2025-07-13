@@ -11,14 +11,14 @@ Feature: Carlewis Portfolio Navigation through Portfolio Section
             And User should compare the project name with the first project name
 
 
-    # Scenario: User Check Portfolio Through the "VIEW ALL PORTFOLIOS" link
-    #     Given User visit main site
-    #     When User click on the "Portfolio" link
-    #     Then User should see the "Recent Work" section
-    #     When User should click on "VIEW ALL PORTFOLIOS"
-    #     Then User should see the "Portfolio" section
-    #         And User should see the "Portfolio" header
-    #         And User should see the "Portfolio" description
-    #     When User click on the first project link
-    #     Then User should see the project details page
-    #         And User should see the project name in the header
+    Scenario: User Check Portfolio Through the "VIEW ALL PORTFOLIOS" link
+        Given User visit main site
+        When User click on the "portfolio" link
+        Then User should see the "Recent Work" title in the "Portfolio" section
+        # When User should click on "VIEW ALL PORTFOLIOS"
+        # Then User should see the "Portfolio" section
+        #     And User should see the "Portfolio" header
+        #     And User should see the "Portfolio" description
+        # When User click on the first project link
+        # Then User should see the project details page
+        #     And User should see the project name in the header
