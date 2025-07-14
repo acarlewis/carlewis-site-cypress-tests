@@ -8,6 +8,14 @@ class ContactFun {
   
   verifyContactForm() {
     // elt.getContactForm().should('be.visible');
+    elt.getContactForm().should('be.visible');
+  }
+
+  fillContactForm(formData: any) {
+      elt.getInputName().type(formData.Name);
+      elt.getInputPhone().type(formData.Phone);
+      elt.getInputEmail().type(formData.Email);
+      elt.getInputMessage().type(formData.Message);
   }
 
   verifyContactFormFields() {

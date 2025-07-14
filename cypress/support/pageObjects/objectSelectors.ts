@@ -60,6 +60,10 @@ export const getExperienceBox = (experianceNum: string) => cy.get(`[cy-test="exp
   
 export const getViewAllPortfoliosBtn = () => cy.get('[cy-test="viewAllProfile"]')
 export const getPortfolioListSection = () => cy.get('[cy-test="portfolio"]')
+export const getPortfolioInnertSection = () => cy.get('.item-inner')
+export const getPortfolioSingleSection = () => cy.get('#portfolio-single')
+export const getPortfolioTitle = () => cy.get('h1.project-title')
+export const getAllPortfolioListSection = () => cy.get('#portfolio')
 
 
 // **************************************************************************************
@@ -69,7 +73,12 @@ export const getPortfolioListSection = () => cy.get('[cy-test="portfolio"]')
 // **************************************************************************************
 // Contact Object Selectors
 // **************************************************************************************
-  
+
+export const getContactForm = () => cy.get('form[cy-test="contact-form"]')
+export const getInputName = () => cy.get('input[cy-test="Cname"]')
+export const getInputPhone = () => cy.get('input[cy-test="Ctel"]')
+export const getInputEmail = () => cy.get('input[cy-test="Cemail"]')
+export const getInputMessage = () => cy.get('textarea[cy-test="Ccomments"]')
 
 
 // **************************************************************************************

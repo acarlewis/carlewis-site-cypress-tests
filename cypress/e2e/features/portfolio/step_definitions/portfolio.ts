@@ -41,4 +41,9 @@ Then('User should click on {string}', (btnText: string) => {
   Fun.viewAllPortfolios(btnText);
 });
 
+Then('Then User should see the {string} section', (btnText: string) => {
+  // User should click on "VIEW ALL PORTFOLIOS"
+  Fun.AllPortfolios(btnText);
+});
+
 // **************************************************************************************

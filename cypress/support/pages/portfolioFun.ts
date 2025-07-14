@@ -1,4 +1,5 @@
 import * as elt from '../pageObjects/objectSelectors'; // ✅
+import { compareStings } from '../../support/utils/helpers'; // ✅
 
 
 class PortfolioFun {
@@ -7,11 +8,16 @@ class PortfolioFun {
     elt.getViewAllPortfoliosBtn().contains(btnText).click();
   }
 
+  AllPortfolios(btnText: string) {
+    cy.url().should('include', '/portfolios');  // Check that the URL contains "/pro"
+    elt.getAllPortfolioListSection().should('be.visible'); // Ensure the portfolio section is visible
+  }
+
   singlePortfolioName() {
     // User get the name of the first project
-    cy.get('[cy-test="portfolio"]')
+    elt.getPortfolioListSection()
     .then(() => {
-      cy.get('.item-inner')
+      elt.getPortfolioInnertSection()
         .first()  // Selects the first project item
         .trigger('mouseover')  // Simulates hover over the first project
         .should('be.visible') // Waits for any hidden content to appear
@@ -28,9 +34,9 @@ class PortfolioFun {
 
   clickOnSinglePortfolio(){
     // User should click on the project link
-    cy.get('[cy-test="portfolio"]')
+    elt.getPortfolioListSection()
     .then(() => {
-      cy.get('.item-inner')
+      elt.getPortfolioInnertSection()
         .first()  // Selects the first project item
         .trigger('mouseover')  // Simulates hover over the first project
         .should('be.visible') // Waits for any hidden content to appear
@@ -41,18 +47,16 @@ class PortfolioFun {
 
   viewPortfolioDetailPage(){
     // User should see the project details page
-    cy.get('#portfolio-single')
+    elt.getPortfolioSingleSection()
       .should('be.visible'); // Waits for any hidden content to appear
   }
 
   comparePortfolioName(){
-    // User should compare the project name with the first project name
-    cy.get('@firstProjectName').then((firstProjectName) => {
-      const projectNameText = typeof firstProjectName === 'string' ? firstProjectName : String(firstProjectName);
-      let cleanedProjectName = projectNameText.replace(/\s+/g, ' ').trim(); // Clean the project name by trimming whitespace
-      // Compare the project name in the header with the first project name
-      cy.get('h1.project-title') // Adjust the selector to match your project's title element
-        .should('have.text', cleanedProjectName); // Asserts that the text matches the first project name
+    elt.getPortfolioTitle()
+    .invoke('text')  // Extract text content
+    .then((titleText) => {    
+      // User should compare the project name with the first project name
+      compareStings('firstProjectName', titleText); // Adjust the selector to match your project's title element
     });
   }
 

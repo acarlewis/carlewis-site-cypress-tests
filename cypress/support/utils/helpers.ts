@@ -1,6 +1,14 @@
 export function compareStings(alias: string, actual: string) {
   cy.get(`@${alias}`).then((expected) => {
-    expect(actual).to.eq(expected);
+    // Ensure both expected and actual are strings before comparison
+    let expectedString = typeof expected === 'string' ? expected : String(expected);
+    let actualString = typeof actual === 'string' ? actual : String(actual);
+    let cleanedExpectedString = expectedString.replace(/\s+/g, ' ').trim(); // Clean the project name by trimming whitespace
+    let cleanedActualString = actualString.replace(/\s+/g, ' ').trim(); // Clean the actual name by trimming whitespace
+    // Compare the cleaned strings
+    expect(cleanedExpectedString).to.eq(cleanedActualString);
+    // Log the comparison result
+    cy.log(`Expected: ${cleanedExpectedString}, Actual: ${cleanedActualString}`);
   });
 }
 
